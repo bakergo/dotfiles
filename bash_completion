@@ -1,0 +1,11 @@
+#!/bin/bash
+complete="$HOME/etc/bash_completion.d"
+if [[ -d $complete && -r $complete && -x $complete ]] ; then
+    for file in $( ls $complete ); do
+        if [[ ( -f "$complete/$file" || -h "$complete/$file" )
+            && -r "$complete/$file" ]] ; then
+            source "$complete/$file"
+        fi
+    done
+fi
+
