@@ -25,7 +25,7 @@ def main():
 			hasher = hmac.new(str(SEED), digestmod=hashlib.sha1)
 			hasher.update(hostnames[i])
 			hexdigest = hasher.hexdigest()
-			sum = ord(hasher.digest()[-1]) % 8
+			sum = ord(hasher.digest()[-1]) % 256
 			print '%d %s %s %d' % (SEED, hostnames[i], hexdigest, sum)
 			if sum != colors[i]:
 				matching = False
