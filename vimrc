@@ -13,6 +13,15 @@ set ruler
 
 set nocompatible               " be iMproved
 
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+
 filetype plugin indent on
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
