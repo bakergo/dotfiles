@@ -21,7 +21,10 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'elzr/vim-json'
 
 filetype plugin indent on
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+colorscheme jellybeans
 
