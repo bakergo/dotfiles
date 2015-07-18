@@ -26,5 +26,13 @@ Plugin 'elzr/vim-json'
 
 filetype plugin indent on
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
-colorscheme jellybeans
+
+set background=dark
+if has('gui_running')
+	colorscheme solarized
+else
+	colorscheme jellybeans
+endif
+
+
 
