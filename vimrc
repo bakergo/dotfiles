@@ -1,4 +1,5 @@
 syntax on
+set shell=/bin/bash
 set autochdir
 set showmatch
 set wildmode=longest,list
