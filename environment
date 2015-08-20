@@ -9,3 +9,4 @@ PS1='${debian_chroot:+($debian_chroot)}\[\e[00;35m\][\t]\[\e[00m\] \
 
 export GOPATH="$HOME/src/golang"
 export PATH="$PATH:$HOME/src/go-install/bin:$HOME/src/golang/bin"
+export PATH="$HOME/bin:$PATH"
