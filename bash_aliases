@@ -1,6 +1,7 @@
 #!/bin/sh
-alias vi='vi -p'
-alias vim='vim -p'
+alias vi='v'
+alias vim='v'
 alias view='view -p'
+alias gvim='v'
 alias rsync='rsync --progress'
 
