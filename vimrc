@@ -13,16 +13,20 @@ set nowrap
 set ruler
 
 set nocompatible               " be iMproved
-
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
+" call vundle#rc()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'nanotech/jellybeans.vim'
+
+call vundle#end()
 
 filetype plugin indent on
+
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
