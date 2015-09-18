@@ -13,19 +13,22 @@ set nowrap
 set ruler
 
 set nocompatible               " be iMproved
-
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
+" call vundle#rc()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'elzr/vim-json'
 
+call vundle#end()
+
 filetype plugin indent on
+
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 set background=dark
@@ -34,6 +37,3 @@ if has('gui_running')
 else
 	colorscheme jellybeans
 endif
-
-
-
