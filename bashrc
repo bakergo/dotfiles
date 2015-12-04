@@ -98,9 +98,9 @@ fi
 
 if [ -d ~/.bashrc.d ] ; then
 	for sourcefile in ~/.bashrc.d/*; do
-		if [ -f "$sourcefile" ] ; then
-			. "$sourcefile"
-		fi
+		# from https://www.turnkeylinux.org/blog/generic-shell-hooks
+		[ -x "$sourcefile" ] || continue;
+		. "$sourcefile"
 	done
 fi
 
