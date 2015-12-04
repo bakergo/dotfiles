@@ -19,16 +19,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " call vundle#rc()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'elzr/vim-json'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/syntastic'
-" Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
+Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'powerline/fonts'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
