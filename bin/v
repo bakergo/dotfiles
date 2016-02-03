@@ -1,3 +1,4 @@
 #!/bin/bash
-gvim --remote-tab-silent "$@" > /dev/null 2>&1 || \
-gvim -p "$@" > /dev/null 2>&1
+exit
+vim --remote-tab-silent "$@" > /dev/null 2>&1 || \
+vim -p "$@" > /dev/null 2>&1
