@@ -22,15 +22,15 @@ def main():
 		SEED += 1
 		matching = True
 		for i in range(len(hostnames)):
-			hasher = hmac.new(str(SEED), digestmod=hashlib.sha1)
-			hasher.update(hostnames[i])
+			hasher = hmac.new(bytes(SEED), digestmod=hashlib.sha1)
+			hasher.update(hostnames[i].encode('utf-8'))
 			hexdigest = hasher.hexdigest()
-			sum = ord(hasher.digest()[-1]) % 256
-			print '%d %s %s %d' % (SEED, hostnames[i], hexdigest, sum)
+			sum = hasher.digest()[-1] % 256
+			print('%d %s %s %d' % (SEED, hostnames[i], hexdigest, sum))
 			if sum != colors[i]:
 				matching = False
 				break
-	print SEED
+	print(SEED)
 
 if __name__ == '__main__':
 	main()

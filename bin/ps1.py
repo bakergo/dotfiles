@@ -12,7 +12,7 @@ import hashlib
 seed = 67896
 hostname = socket.gethostname()
 username = pwd.getpwuid(os.getuid())[0]
-hasher = hmac.new(str(seed), digestmod=hashlib.sha1)
-hasher.update('%s@%s' % (username, hostname))
-sum = ord(hasher.digest()[-1]) % 256
-print sum % 256
+hasher = hmac.new(bytes(seed), digestmod=hashlib.sha1)
+hasher.update(('%s@%s' % (username, hostname)).encode('utf-8'))
+sum = hasher.digest()[-1] % 256
+print(sum)
