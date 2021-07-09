@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+import random
+import statistics
+
+DICE = [12, 10, 8, 6]
+HITS = [1, 2]
+SAMPLES = 10000
+
+results = []
+
+prng = random.Random()
+
+for i in range(SAMPLES):
+  rolls = 0;
+  die_idx = 0;
+  while True:
+    current_die = DICE[die_idx]
+    # print(current_die)
+    rolls += 1
+    roll = prng.randint(1, current_die)
+    if roll in HITS:
+      die_idx += 1
+    if die_idx >= len(DICE):
+      results.append(rolls)
+      break
+
+
+print('mean: ', statistics.mean(results))
+print('median: ', statistics.median(results))
+print('mode: ', statistics.mode(results))
+print('stdev: ', statistics.stdev(results))
+
