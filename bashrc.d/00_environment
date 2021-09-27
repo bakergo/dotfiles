@@ -1,14 +1,15 @@
 #!/bin/sh
 # source this file
 color=$( $HOME/bin/ps1.py )
+# color=228
 
 PS1='${debian_chroot:+($debian_chroot)}\[\e[00;35m\][\t]\[\e[00m\] \
 \[\e[01;38;5;${color}m\]\u@\h\[\e[00m\]\
 \[\e[01;33m\]$(__git_ps1)\[\e[00m\]\
 :\[\e[01;34m\]\w\[\e[00m\]\r\n\$ '
 
-export GOPATH="$HOME/src/golang"
-export GOROOT="$HOME/src/go-install"
-export PATH="$PATH:$HOME/src/go-install/bin:$HOME/src/golang/bin"
 export PATH="$HOME/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/default-java"
+export PATH="$PATH:/usr/lib/google-cloud-sdk/bin"
+
+# Local pip installed packages (e.g. pip install --user pants)
+export PATH="$HOME/.local/bin:$PATH"

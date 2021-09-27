@@ -1,8 +1,24 @@
 #!/bin/sh
-alias vi='v'
-alias vim='v'
-alias view='view -p'
-alias gvim='v'
+# alias vi='vim -p'
+# alias vim='vim -p'
+# alias view='view -p'
+# alias gvim='v'
 alias rsync='rsync --progress'
-alias rm='trash'
+alias rm='rm -I'
+alias blaze='bazel'
+
+function bd() {
+  curdir="$PWD"
+  while [ "$curdir" != "/" ] ; do
+    if [ -d "${curdir}/.git" ] ; then
+      cd $curdir
+      break
+    fi
+    curdir=$( dirname "$curdir" )
+  done
+}
+
+function new() {
+  ls -lrt | tail -n 15
+}
 
