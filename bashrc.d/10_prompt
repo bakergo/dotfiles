@@ -1,0 +1,25 @@
+#!/bin/bash
+# From https://jakemccrary.com/blog/2015/05/03/put-the-last-commands-run-time-in-your-bash-prompt/
+function timer_start {
+  timer=${timer:-$SECONDS}
+}
+
+function timer_stop {
+  timer_show=$(($SECONDS - $timer))
+  unset timer
+}
+
+trap 'timer_start' DEBUG
+
+if [ "$PROMPT_COMMAND" == "" ]; then
+  PROMPT_COMMAND="timer_stop"
+else
+  PROMPT_COMMAND="$PROMPT_COMMAND; timer_stop"
+fi
+
+color=$( $HOME/bin/ps1.py )
+PS1='${debian_chroot:+($debian_chroot)}\[\e[00;35m\]($?; ${timer_show}s)[\t]\[\e[00m\] \
+\[\e[01;38;5;${color}m\]\u@\h\[\e[00m\]\
+\[\e[01;33m\]$(__git_ps1)\[\e[00m\]\
+:\[\e[01;34m\]\w\[\e[00m\]\r\n\
+\$ '
