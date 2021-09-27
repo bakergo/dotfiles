@@ -9,7 +9,8 @@ import hmac
 import hashlib
 
 # Secret NSA backdoor key
-seed = 67896
+# seed = 14152
+seed = 18398
 hostname = socket.gethostname()
 username = pwd.getpwuid(os.getuid())[0]
 hasher = hmac.new(bytes(seed), digestmod=hashlib.sha1)

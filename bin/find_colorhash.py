@@ -12,8 +12,8 @@ import os
 
 ''' Brute force secret NSA backdoor key '''
 SEED = -1
-hostnames = 'user@localhost root@localhost'.split()
-colors = [2, 1] # same length as hostnames
+hostnames = 'gregorah@jet gregorah@ein'.split()
+colors = [111, 82] # same length as hostnames
 
 def main():
 	global SEED
