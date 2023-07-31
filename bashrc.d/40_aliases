@@ -6,6 +6,8 @@
 alias rsync='rsync --progress'
 alias rm='rm -I'
 alias blaze='bazel'
+alias mv='mv -i'
+alias cp='cp -i --reflink=auto  --sparse=always'
 
 function bd() {
   curdir="$PWD"

@@ -6,3 +6,5 @@ export PATH="$PATH:/usr/lib/google-cloud-sdk/bin"
 
 # Local pip installed packages (e.g. pip install --user pants)
 export PATH="$HOME/.local/bin:$PATH"
+export EDITOR=vim
+export VISUAL=vim
