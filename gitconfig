@@ -1,2 +1,4 @@
 [alias]
 	graph = log --oneline --graph --decorate=short
+[pull]
+	rebase = false
