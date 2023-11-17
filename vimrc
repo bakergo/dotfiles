@@ -1,4 +1,5 @@
 syntax on
+
 set shell=/bin/bash
 set autochdir
 set showmatch
@@ -12,23 +13,31 @@ set nowrap
 
 set ruler
 
-set nocompatible               " be iMproved
+set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'elzr/vim-json'
-Plugin 'fatih/vim-go'
-Plugin 'VundleVim/Vundle'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'powerline/fonts'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
-call vundle#end()
+call plug#begin()
+
+Plug 'elzr/vim-json'
+Plug 'fatih/vim-go'
+Plug 'nanotech/jellybeans.vim'
+Plug 'powerline/fonts'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
 
 " syntastic
 let g:syntastic_check_on_open = 1
