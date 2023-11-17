@@ -10,6 +10,7 @@ declare -a packages=(
   python-is-python3
   sshfs
   tilix
+  neovim
   vim-gtk
 )
 
@@ -27,15 +28,16 @@ for d in "${dotfiles[@]}" ; do
 	ln -sf "$curdir/$d" "$HOME/.${d}"
 done
 
-declare -a regfiles=(
-  bin
+declare -A mapfiles=(
+  config/nvim .config/nvim
+  bin bin
 )
 
-for d in "${dotfiles[@]}" ; do
-	ln -sf "$curdir/$d" "$HOME/${d}"
+for name in "${!mapfiles[@]}" ; do
+	ln -sf "$curdir/$name" "$HOME/${mapfiles[$name]}"
 done
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 mkdir -p "$HOME/src"
 mkdir -p "$HOME/ttl"
